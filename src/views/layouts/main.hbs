@@ -1,0 +1,41 @@
+---
+root: ..
+---
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>
+            Static Site
+        </title>
+
+        <link rel="shortcut icon" href="{{ root }}/img/favicon.ico">
+        <link rel="apple-touch-icon-precomposed" href="{{ root }}/img/touch-icon.png">
+
+        <link rel="stylesheet" type="text/css" href="{{ root }}/css/style.min.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="{{ root }}/" {{#is active_tab 'home'}}class="active"{{/is}}>Home</a></li>
+                        <li><a href="{{ root }}/contact" {{#is active_tab 'contact'}}class="active"{{/is}}>Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="main">
+                <h1 class="page-header">{{ page_header }}</h1>
+                {{> body }}
+            </div>
+        </div>
+
+        <script src="{{ root }}/js/main.min.js"></script>
+    </body>
+</html>
